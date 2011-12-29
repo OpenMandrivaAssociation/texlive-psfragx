@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 PSfragX offers a mechanism to embed \psfrag commands, as
@@ -39,20 +36,12 @@ selected on the basis of the current language of the document.
 A Matlab script (LaPrint) is provided, to export an EPS file
 with psfragx annotations ready embedded.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -74,7 +63,6 @@ with psfragx annotations ready embedded.
 %doc %{_texmfdistdir}/source/latex/psfragx/psfragx.drv
 %doc %{_texmfdistdir}/source/latex/psfragx/psfragx.dtx
 %doc %{_texmfdistdir}/source/latex/psfragx/psfragx.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -85,5 +73,3 @@ with psfragx annotations ready embedded.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
