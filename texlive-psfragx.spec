@@ -1,12 +1,12 @@
-# revision 25702
+# revision 26243
 # category Package
 # catalog-ctan /macros/latex/contrib/psfragx
-# catalog-date 2012-03-19 13:11:25 +0100
+# catalog-date 2012-05-07 20:30:54 +0200
 # catalog-license lppl
-# catalog-version 1.0
+# catalog-version 1.1
 Name:		texlive-psfragx
-Version:	1.0
-Release:	3
+Version:	1.1
+Release:	1
 Summary:	A psfrag eXtension
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/psfragx
@@ -49,7 +49,7 @@ with psfragx annotations ready embedded.
 %{_texmfdistdir}/tex/latex/psfragx/psfragx.cfg
 %{_texmfdistdir}/tex/latex/psfragx/psfragx.sty
 %doc %{_texmfdistdir}/doc/latex/psfragx/README
-%doc %{_texmfdistdir}/doc/latex/psfragx/README.txt.laprint-3.16
+%doc %{_texmfdistdir}/doc/latex/psfragx/README.laprint-3.16
 %doc %{_texmfdistdir}/doc/latex/psfragx/laprint.m
 %doc %{_texmfdistdir}/doc/latex/psfragx/laprintdoc.ps
 %doc %{_texmfdistdir}/doc/latex/psfragx/laprpfx.mat
