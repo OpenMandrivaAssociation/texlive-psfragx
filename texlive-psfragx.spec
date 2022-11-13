@@ -1,19 +1,13 @@
-# revision 26243
-# category Package
-# catalog-ctan /macros/latex/contrib/psfragx
-# catalog-date 2012-05-07 20:30:54 +0200
-# catalog-license lppl
-# catalog-version 1.1
 Name:		texlive-psfragx
-Version:	1.1
-Release:	11
+Version:	26243
+Release:	1
 Summary:	A psfrag eXtension
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/psfragx
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -37,12 +31,12 @@ A Matlab script (LaPrint) is provided, to export an EPS file
 with psfragx annotations ready embedded.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -66,32 +60,11 @@ with psfragx annotations ready embedded.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
-+ Revision: 805040
-- Update to latest release.
-
-* Tue Mar 27 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-3
-+ Revision: 787732
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 755147
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 719320
-- texlive-psfragx
-- texlive-psfragx
-- texlive-psfragx
-- texlive-psfragx
-
