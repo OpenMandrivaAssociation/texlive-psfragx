@@ -1,6 +1,6 @@
 Name:		texlive-psfragx
 Version:	26243
-Release:	1
+Release:	2
 Summary:	A psfrag eXtension
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/psfragx
