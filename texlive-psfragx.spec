@@ -3,7 +3,7 @@ Version:	26243
 Release:	2
 Summary:	A psfrag eXtension
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/psfragx
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/psfragx
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/psfragx.doc.r%{version}.tar.xz
